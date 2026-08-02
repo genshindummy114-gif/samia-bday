@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎀 cutiepie birthday · 18 ✨</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Quicksand', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff0f5;
+      background-image: radial-gradient(circle at 10% 20%, #ffe4ec 0%, #ffd9e5 100%);
+      padding: 1.5rem;
+    }
+
+    /* birthday card – light pink dream */
+    .card {
+      max-width: 700px;
+      width: 100%;
+      background: rgba(255, 240, 245, 0.75);
+      backdrop-filter: blur(2px);
+      padding: 2.5rem 2rem 3rem;
+      border-radius: 68px 68px 48px 48px;
+      box-shadow: 0 20px 40px rgba(255, 105, 135, 0.2), 0 8px 16px rgba(255, 182, 193, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.7);
+      border: 2px solid rgba(255, 220, 225, 0.6);
+      text-align: center;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .card::before {
+      content: "🎈 🎀 ✨";
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      font-size: 2.2rem;
+      opacity: 0.2;
+      transform: rotate(-8deg);
+      pointer-events: none;
+    }
+
+    .card::after {
+      content: "🌸";
+      position: absolute;
+      bottom: -8px;
+      right: 20px;
+      font-size: 2.8rem;
+      opacity: 0.2;
+      transform: rotate(12deg);
+      pointer-events: none;
+    }
+
+    .cat-message {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* THE CAT IMAGE WITH CSS BLINK EFFECT */
+    .cat-wrapper {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      border-radius: 30px;
+      background: #ffffff;
+      box-shadow: 0 8px 20px rgba(255, 150, 180, 0.25);
+      padding: 8px;
+      border: 3px solid #ffb6c9;
+      transition: 0.2s;
+      overflow: hidden;
+    }
+
+    .cat-wrapper:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 28px rgba(255, 130, 160, 0.35);
+    }
+
+    .cat-base {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* The blinking overlay using your static image */
+    .cat-blinking {
+      position: absolute;
+      top: 8px; left: 8px; right: 8px; bottom: 8px;
+      background-image: url('YOUR_GITHUB_LINK_HERE'); /* ← REPLACE THIS */
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      animation: blinkEyes 3s infinite;
+      border-radius: 20px;
+    }
+
+    @keyframes blinkEyes {
+      0%, 92%, 98%, 100% { opacity: 0; } /* Eyes open */
+      95% { opacity: 1; } /* Eyes closed (blink) */
+    }
+
+    /* message box */
+    .message-box {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(4px);
+      padding: 1.2rem 1.8rem;
+      border-radius: 60px 60px 60px 12px;
+      box-shadow: 0 4px 12px rgba(255, 120, 150, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+      border: 1px solid #ffccd9;
+      margin: 0.8rem 0 0.2rem;
+      width: fit-content;
+      max-width: 90%;
+    }
+
+    .message-box p {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #a13e5a;
+      text-shadow: 0 2px 4px rgba(255, 200, 210, 0.4);
+      letter-spacing: 0.02em;
+      line-height: 1.3;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+    }
+
+    .message-box p span {
+      background: #ffdae3;
+      padding: 0.1rem 0.6rem;
+      border-radius: 40px;
+      color: #872341;
+      font-size: 1.8rem;
+    }
+
+    .sub-message {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #b35d76;
+      margin-top: 6px;
+      opacity: 0.9;
+      letter-spacing: 0.5px;
+    }
+
+    /* surprise button */
+    .surprise-btn {
+      background: #ffb3c6;
+      border: none;
+      padding: 1rem 2.8rem;
+      border-radius: 60px;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #561e2e;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      box-shadow: 0 6px 0 #d47a92, 0 12px 20px -8px rgba(255, 80, 120, 0.3);
+      cursor: pointer;
+      transition: all 0.08s linear;
+      margin-top: 1.8rem;
+      border: 2px solid #ffe2eb;
+      letter-spacing: 0.5px;
+    }
+
+    .surprise-btn:active {
+      transform: translateY(6px);
+      box-shadow: 0 2px 0 #d47a92, 0 12px 20px -8px #ff8aa8;
+    }
+
+    .surprise-btn:hover {
+      background: #ffbdd0;
+      transform: scale(1.02);
+      box-shadow: 0 6px 0 #d47a92, 0 16px 24px -6px #ff7a9e;
+    }
+
+    .icon-emoji {
+      display: inline-block;
+      font-size: 2.2rem;
+      transform: rotate(5deg);
+    }
+
+    /* surprise page */
+    .surprise-page {
+      display: none;
+      margin-top: 1.2rem;
+      padding: 0.8rem 0.5rem 0.2rem;
+      border-top: 2px dashed #ffb6c9;
+      animation: fadePop 0.5s ease;
+    }
+
+    .surprise-page.show {
+      display: block;
+    }
+
+    .surprise-content {
+      background: rgba(255, 240, 245, 0.6);
+      backdrop-filter: blur(6px);
+      border-radius: 60px 20px 60px 20px;
+      padding: 2rem 1rem;
+      border: 1px solid #ffccd9;
+      box-shadow: inset 0 4px 12px rgba(255, 200, 210, 0.5);
+    }
+
+    .surprise-content h2 {
+      font-size: 2.4rem;
+      color: #9b3b56;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 6px #ffcdd8;
+    }
+
+    .surprise-content p {
+      font-size: 1.3rem;
+      color: #682c40;
+      font-weight: 500;
+      background: rgba(255, 255, 255, 0.5);
+      padding: 0.8rem 1.5rem;
+      border-radius: 48px;
+      display: inline-block;
+      backdrop-filter: blur(2px);
+    }
+
+    .confetti-emoji {
+      font-size: 3rem;
+      letter-spacing: 6px;
+      margin: 0.5rem 0;
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 2rem 1rem 2.2rem; border-radius: 48px; }
+      .message-box p { font-size: 1.4rem; }
+      .cat-wrapper { width: 150px; height: 150px; }
+      .surprise-btn { font-size: 1.3rem; padding: 0.9rem 2rem; }
+    }
+
+    @keyframes fadePop {
+      0% { opacity: 0; transform: scale(0.96); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <!-- First page -->
+    <div class="cat-message" id="firstPage">
+      
+      <!-- YOUR HOSTED IMAGE WITH CSS BLINK -->
+      <div class="cat-wrapper">
+        <!-- The base image (always visible) -->
+        <img 
+          class="cat-base" 
+          src="YOUR_GITHUB_LINK_HERE" 
+          alt="Cute white cat with birthday cake"
+        >
+        <!-- The exact same image layered on top, but it blinks away -->
+        <div class="cat-blinking"></div>
+      </div>
+
+      <div class="message-box">
+        <p>
+          <span>🎀</span> A Cutiepie was born today, 18 years ago! <span>🎂</span>
+        </p>
+        <div class="sub-message">✨ the sweetest sparkle ✨</div>
+      </div>
+
+      <button class="surprise-btn" id="surpriseBtn">
+        <span class="icon-emoji">🎁</span>
+        start the surprise
+        <span class="icon-emoji">✨</span>
+      </button>
+    </div>
+
+    <!-- Second page: surprise -->
+    <div id="surprisePage" class="surprise-page">
+      <div class="surprise-content">
+        <div class="confetti-emoji">🎉🎊🎈🎂🎀</div>
+        <h2>🥳 HAPPY 18th 🥳</h2>
+        <p>🌸 you're officially a cutiepie adult! 🌸</p>
+        <div style="margin-top: 0.8rem; font-size: 2rem; line-height: 1.6;">
+          🐱💖✨ <br> 
+          <span style="font-size: 1.4rem; background: #ffd9e4; padding: 0.2rem 1rem; border-radius: 40px; display: inline-block; margin-top: 0.3rem;">
+            blink & shine
+          </span>
+        </div>
+        <p style="margin-top: 1rem; font-size: 1rem; opacity: 0.8; background: none; padding: 0;">
+          (you're still that cute cat, just 18x cooler)
+        </p>
+        <div style="margin-top: 1.2rem;">
+          <button id="resetSurpriseBtn" style="background: transparent; border: 1px solid #ffa5b9; padding: 0.5rem 1.4rem; border-radius: 40px; color: #812f48; font-weight: 500; cursor: pointer; backdrop-filter: blur(2px); transition: 0.1s;">
+            🔄 see the cutie again
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    (function() {
+      const surpriseBtn = document.getElementById('surpriseBtn');
+      const firstPage = document.getElementById('firstPage');
+      const surprisePage = document.getElementById('surprisePage');
+      const resetBtn = document.getElementById('resetSurpriseBtn');
+
+      function revealSurprise() {
+        firstPage.style.display = 'none';
+        surprisePage.classList.add('show');
+        document.querySelector('.card').style.boxShadow = '0 20px 50px rgba(255, 105, 135, 0.4)';
+      }
+
+      function resetToFirst() {
+        firstPage.style.display = 'flex';
+        surprisePage.classList.remove('show');
+        surprisePage.style.display = '';
+        document.querySelector('.card').style.boxShadow = '';
+        firstPage.style.flexDirection = 'column';
+        firstPage.style.alignItems = 'center';
+      }
+
+      surpriseBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        revealSurprise();
+      });
+
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          resetToFirst();
+        });
+      }
+
+      resetToFirst(); 
+      surprisePage.style.display = ''; 
+
+      window.addEventListener('load', function() {
+        if (firstPage.style.display === 'none' && !surprisePage.classList.contains('show')) {
+          resetToFirst();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
